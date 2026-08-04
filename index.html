@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Astrolábio das Horas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=EB+Garamond:ital@0;1&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <div class="eyebrow">Orrery &middot; Ephemeris Engine</div>
+        <h1>Astrolábio das Horas</h1>
+        <div class="status-line" id="statusLine"></div>
+      </header>
+
+      <div class="user-panel" aria-label="Seu mapa">
+        <label>
+          <span>Seu Signo Solar</span>
+          <select id="userSunSign"><option value="">Selecione…</option></select>
+        </label>
+        <label>
+          <span>Seu Ascendente</span>
+          <select id="userAscSign"><option value="">Selecione…</option></select>
+        </label>
+      </div>
+
+      <div id="wheel" class="wheel" aria-label="Astrolábio mostrando a posição dos planetas no zodíaco e no horizonte"></div>
+
+      <div class="interp-wrap" id="personal" aria-label="Cruzamento do momento atual com o seu mapa"></div>
+
+      <div class="interp-wrap" id="interpretation" aria-label="Interpretação astrológica do momento atual"></div>
+
+      <div class="ledger-wrap">
+        <table class="ledger">
+          <caption>Efemérides do Instante</caption>
+          <thead>
+            <tr>
+              <th>Corpo</th>
+              <th>Signo &amp; Grau</th>
+              <th>Casa</th>
+              <th>Altura</th>
+              <th>Horizonte</th>
+            </tr>
+          </thead>
+          <tbody id="ledgerBody"></tbody>
+        </table>
+      </div>
+
+      <footer>
+        Posições geocêntricas calculadas localmente a partir de elementos keplerianos osculadores
+        (época J2000 &middot; Paul Schlyter / JPL) — sem chamadas externas de efemérides.
+        Precisão aproximada de poucos minutos de arco para os planetas e cerca de 1&deg; para a Lua.
+        Casas em sistema de Casas Iguais a partir do Ascendente calculado para a localização detectada.
+      </footer>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
